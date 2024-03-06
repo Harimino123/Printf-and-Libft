@@ -23,7 +23,7 @@ void		*ft_memset(void *buff, int value, size_t len);
 void		*ft_memcpy(void *str1, const void *str2, size_t numBytes);
 void		*ft_memchr(const void *str, int c, size_t n);
 char		*ft_strnstr(const char *big, const char *little, size_t n);
-char    	*ft_strdup(char *src);
+char    	*ft_strdup(const char *src);
 char		*ft_strchr(const char *str, int c);
 char		*ft_strrchr(const char *str, int c);
 int			ft_memcmp(const void *str1, const void *str2, size_t n);

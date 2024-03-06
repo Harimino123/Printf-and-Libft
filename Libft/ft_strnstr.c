@@ -14,24 +14,33 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t n)
 {
-	unsigned char	*bi;
-	unsigned char	*li;
+	size_t	i;
+	size_t	j;
 
-	if (*little == '\0')
+	if ((big == NULL || little == NULL) && !n)
+		return (0);
+	if (!*little)
 		return ((char *)big);
-	while (*big && n > 0)
+	i = 0;
+	while (big[i] != '\0' && i < n)
 	{
-		bi = (unsigned char *)big;
-		li = (unsigned char *)little;
-		while (*bi == *li && *li != '\0')
-		{
-			bi++;
-			li++;
-		}
-		if (*li == '\0')
-			return ((char *)big);
-		big++;
-		n--;
+		j = 0;
+		while (big[i + j] != '\0'
+			&& little[j] != '\0'
+			&& big[i + j] == little[j]
+			&& i + j < n)
+			j++;
+		if (little[j] == '\0')
+			return ((char *)(big + i));
+		i++;
 	}
 	return (0);
 }
+/*
+int	main(void)
+{
+
+	printf("Original: %s\n", strstr("Bonjour comment tu vas ?", "tu"));
+	printf("Result: %s\n", ft_strnstr("Bonjour comment tu vas ?", "tu", 18));
+	return (0);
+}*/

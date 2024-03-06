@@ -18,32 +18,31 @@ int	ft_atoi(const char *str)
 	int	nbr;
 	int	i;
 
-	sign = 0;
+	sign = 1;
 	nbr = 0;
 	i = 0;
-	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
+	while (str[i] == ' ' || str[i] == '\f' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\t'
+		|| str[i] == '\v')
 		i++;
-	while (str[i] == '+' || str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			sign++;
+			sign = -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		nbr *= 10;
-		nbr += str[i] - '0';
+		nbr = nbr * 10 + (str[i] - '0');
 		i++;
 	}
-	if (!(sign % 2))
-		return (nbr);
-	return (-nbr);
+	return (nbr * sign);
 }
 /*
 int	main()
 {
-	char	chaine[] = "-123abc";
-	char	chain[] = "-123abc";
+	char	chaine[] = "123";
+	char	chain[] = "123";
 	int	dest;
 	int	des;
 	
