@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 08:51:53 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/07 08:49:22 by hrasolof         ###   ########.fr       */
+/*   Created: 2024/03/05 09:51:00 by hrasolof          #+#    #+#             */
+/*   Updated: 2024/03/07 08:50:01 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-void	ft_bzero(void *buff, size_t len)
+void	*ft_calloc(size_t n_block, size_t size)
 {
-	unsigned char	*i;
+	char	*cal;
+	size_t	calc;
 
-	i = buff;
-	while (len--)
-	{
-		*i++ = 0;
-	}
+	calc = n_block * size;
+	cal = malloc(calc);
+	if (!cal)
+		return (0);
+	ft_bzero(cal, calc);
+	return (cal);
 }
