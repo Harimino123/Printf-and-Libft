@@ -23,12 +23,16 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	if (len > ft_strlen(str - start))
 		len = ft_strlen(str + start);
 	p = (char *)malloc(sizeof(char) * (len + 1));
-	if (p == NULL)
+	if (!p)
 		return (NULL);
-	i = start;
+	i = 0;
 	j = 0;
-	while (str[i] && j < len)
-		p[j++] = str[i++];
+	while (str[i])
+	{
+		if (i >= start && j < len)
+			p[j++] = str[i];
+		i++;
+	}
 	p[j] = '\0';
 	return (p);
 }
