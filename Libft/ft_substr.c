@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/* *************************************************************************  */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
@@ -18,9 +18,11 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (len > ft_strlen(str))
-		return (ft_strdup(""));
-	if (len > ft_strlen(str - start))
+	if (!str)
+		return (0);
+	if (ft_strlen(str) < start)
+		len = 0;
+	if (ft_strlen(str) - start < len)
 		len = ft_strlen(str + start);
 	p = (char *)malloc(sizeof(char) * (len + 1));
 	if (!p)
@@ -40,9 +42,10 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 int	main()
 {
 	#include <stdio.h>
+	#include <string.h>
 
-	char	str[] = "";
-	char	*result = ft_substr(str, 0, 0);
+	char	str[] = "ABCDEFG";
+	char	*result = ft_substr(str, 3, 3);
 	
 	printf("%s\n", result);
 	return (0);

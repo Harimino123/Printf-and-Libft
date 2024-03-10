@@ -6,7 +6,7 @@
 /*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 10:40:45 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/02/28 08:45:53 by hrasolof         ###   ########.fr       */
+/*   Updated: 2024/03/10 11:55:24 by hari             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 /*
 int	main ()
 {
+#include <stdio.h>
 	char	src[] = "def";
 	char	dest[] = "abc";
 	
-	ft_strlcat(dest, src, 5);
-	printf("%s", dest);
+	ft_strlcat(dest, src, 10);
+	printf("%s\n", dest);
 	return 0;
 }*/

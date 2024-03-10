@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
+/*   By: hrasolof <hrasolof@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 09:48:05 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/10 18:07:17 by hari             ###   ########.fr       */
+/*   Created: 2024/03/10 12:38:41 by hrasolof          #+#    #+#             */
+/*   Updated: 2024/03/10 12:40:24 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	return ((c >= ' ' && c <= '~'));
+	
 }
+

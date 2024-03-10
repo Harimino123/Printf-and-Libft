@@ -14,21 +14,19 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	if (size != 0 && size <= ft_strlen(src))
+	size_t	i;
+
+	i = 0;
+	if (size > 0)
 	{
-		ft_memcpy(dst, src, size - 1);
-		dst[size] = '\0';
+		while (src[i] && i < (size - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	else if (size != 0)
-		ft_memcpy(dst, src, ft_strlen(src) + 1);
-	return (ft_strlen(src));
+	while (src[i])
+		i++;
+	return (i);
 }
-/*
-int	main()
-{
-	char	src[] = "lorem ipsum";
-	char	dest[15];
-	
-	ft_strlcpy(dest, src, 3);
-	printf("%s\n", dest);
-}*/
