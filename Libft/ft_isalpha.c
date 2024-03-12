@@ -6,16 +6,16 @@
 /*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 09:02:11 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/02/21 09:02:16 by hrasolof         ###   ########.fr       */
+/*   Updated: 2024/03/12 09:43:26 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
+	int	n;
+
+	n = 0;
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	else
-		return (0);
+		n = 1;
+	return (n);
 }

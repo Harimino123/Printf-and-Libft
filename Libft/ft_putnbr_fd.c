@@ -6,7 +6,7 @@
 /*   By: hrasolof <hrasolof@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 12:38:41 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/11 09:14:58 by hrasolof         ###   ########.fr       */
+/*   Updated: 2024/03/12 11:54:31 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -31,6 +31,5 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n % 10, fd);
 	}
 	else
-		ft_putchar_fd(n + '0', fd);	
+		ft_putchar_fd(n + '0', fd);
 }
-

@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 09:21:25 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/12 09:43:35 by hrasolof         ###   ########.fr       */
+/*   Created: 2024/03/12 12:01:31 by hrasolof          #+#    #+#             */
+/*   Updated: 2024/03/12 12:21:01 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
-{
-	int	n;
+#include "libft.h"
 
-	n = 0;
-	if (c >= 48 && c <= 57)
-		n = 1;
-	return (n);
+void	ft_striteri(char *str, void (*function)(unsigned int, char*))
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		function(i, &str[i]);
+		i++;
+	}
 }
