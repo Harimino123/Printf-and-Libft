@@ -6,7 +6,7 @@
 /*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 08:28:09 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/12 12:15:14 by hrasolof         ###   ########.fr       */
+/*   Updated: 2024/03/13 12:41:22 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *str, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
+char		*ft_strmapi(char const *str, char (*function)(unsigned int, char));
+char		**ft_split(char const *str, char separator);
 char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_strjoin(char const *dest, char const *src);
 char		*ft_strnstr(const char *big, const char *little, size_t n);

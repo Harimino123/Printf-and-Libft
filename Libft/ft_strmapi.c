@@ -1,52 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 08:31:43 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/11 08:32:21 by hrasolof         ###   ########.fr       */
+/*   Created: 2024/03/13 12:28:20 by hrasolof          #+#    #+#             */
+/*   Updated: 2024/03/13 12:55:02 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *str, unsigned int start, size_t len)
+char	*ft_strmapi(char const *str, char (*function)(unsigned int, char))
 {
-	char	*p;
 	size_t	i;
-	size_t	j;
+	char	*p;
 
-	if (!str)
-		return (0);
-	if (ft_strlen(str) < start)
-		len = 0;
-	if (ft_strlen(str) - start < len)
-		len = ft_strlen(str + start);
-	p = (char *)malloc(sizeof(char) * (len + 1));
+	p = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
 	if (!p)
 		return (NULL);
 	i = 0;
-	j = 0;
 	while (str[i])
 	{
-		if (i >= start && j < len)
-			p[j++] = str[i];
+		p[i] = (*function)(i, str[i]);
 		i++;
 	}
-	p[j] = '\0';
+	p[i] = '\0';
 	return (p);
 }
-/*
-int	main()
-{
-	#include <stdio.h>
-	#include <string.h>
-
-	char	str[] = "ABCDEFG";
-	char	*result = ft_substr(str, 3, 3);
-	
-	printf("%s\n", result);
-	return (0);
-}*/

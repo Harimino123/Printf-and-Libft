@@ -31,7 +31,9 @@ SRCS =		ft_isalpha.c \
 		ft_putnbr_fd.c \
 		ft_strtrim.c \
 		ft_itoa.c \
-		ft_striteri.c 
+		ft_striteri.c \
+		ft_split.c \
+		ft_strmapi.c   
 
 OBJS = $(SRCS:.c=.o)
 
