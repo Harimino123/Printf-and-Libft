@@ -6,7 +6,7 @@
 #    By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 09:55:22 by hrasolof          #+#    #+#              #
-#    Updated: 2024/03/14 11:08:32 by hrasolof         ###   ########.fr        #
+#    Updated: 2024/03/14 11:32:48 by hrasolof         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,8 @@ SRCS =		ft_isalpha.c \
 		ft_striteri.c \
 		ft_split.c \
 		ft_strmapi.c \
-		ft_lstnew_bonus.c   
+		ft_lstnew_bonus.c \
+		ft_lstsize_bonus.c  
 
 OBJS = $(SRCS:.c=.o)
 

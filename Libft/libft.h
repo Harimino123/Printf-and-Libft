@@ -6,7 +6,7 @@
 /*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 08:28:09 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/14 11:13:28 by hrasolof         ###   ########.fr       */
+/*   Updated: 2024/03/14 11:31:11 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_list
 }	t_list;
 
 t_list		*ft_lstnew(void *content);
+int			ft_lstsize(t_list *lst);
 size_t		ft_strlcpy(char *dst, const char *src, size_t size);
 size_t		ft_strlen(const char *str);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
