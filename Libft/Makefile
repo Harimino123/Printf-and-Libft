@@ -6,7 +6,7 @@
 #    By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 09:55:22 by hrasolof          #+#    #+#              #
-#    Updated: 2024/03/14 09:55:36 by hrasolof         ###   ########.fr        #
+#    Updated: 2024/03/14 11:08:32 by hrasolof         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,8 @@ SRCS =		ft_isalpha.c \
 		ft_itoa.c \
 		ft_striteri.c \
 		ft_split.c \
-		ft_strmapi.c   
+		ft_strmapi.c \
+		ft_lstnew_bonus.c   
 
 OBJS = $(SRCS:.c=.o)
 
@@ -54,6 +55,9 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	ar -rc $(NAME) $(OBJS)
+
+bonus: $(OBJS)
 	ar -rc $(NAME) $(OBJS)
 
 %.o: %.c
