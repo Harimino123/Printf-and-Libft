@@ -18,8 +18,3 @@ int	ft_toupper(int chr)
 		chr -= 32;
 	return (chr);
 }
-
-/*int	main()
-{
-	printf("%c",ft_toupper('g'));
-}*/

@@ -33,10 +33,3 @@ char	*ft_strdup(const char *src)
 	p[i] = '\0';
 	return (p);
 }
-/*
-int	main(void)
-{
-	char	src[] = "Hello";	
-
-	printf("%s\n", ft_strdup(src));
-}*/

@@ -36,11 +36,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 	}
 	return (0);
 }
-/*
-int	main(void)
-{
-
-	printf("Original: %s\n", strstr("Bonjour comment tu vas ?", "tu"));
-	printf("Result: %s\n", ft_strnstr("Bonjour comment tu vas ?", "tu", 18));
-	return (0);
-}*/

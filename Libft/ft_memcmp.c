@@ -29,28 +29,3 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 	}
 	return (0);
 }
-/*
-int	main()
-{
-	char	str1[] = {'a', 'b'};
-	char	str2[] = {'A','B'};
-	
-
-	int	f_result = ft_memcmp(str1, str2, 6);
-
-	if (f_result > 0)
-		printf("S1 is upper\n");
-	else if (f_result == 0)
-		printf("S1 & S2 is equal\n");
-	else
-		printf("S1 is lower\n");
-
-	int result = memcmp(str1, str2, 2);
-
-	if (result > 0)
-        printf("S1 is upper\n");
-    else if (result == 0)
-        printf("S1 & S2 is equal\n");
-    else
-        printf("S1 is lower\n");
-}*/

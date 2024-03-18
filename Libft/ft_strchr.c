@@ -27,13 +27,3 @@ char	*ft_strchr(const char *str, int c)
 		return ((char *)(str + i));
 	return (0);
 }
-/*
-int  main()
-{
-  char  chaine[] = "Hello, World!";
-  char  char_search = 'W';
-
-  
-  printf("%s\n", strchr(chaine, char_search));
-  printf("%s\n", ft_strchr(chaine, char_search));
-}*/

@@ -38,15 +38,3 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	p[j] = '\0';
 	return (p);
 }
-/*
-int	main()
-{
-	#include <stdio.h>
-	#include <string.h>
-
-	char	str[] = "ABCDEFG";
-	char	*result = ft_substr(str, 3, 3);
-	
-	printf("%s\n", result);
-	return (0);
-}*/

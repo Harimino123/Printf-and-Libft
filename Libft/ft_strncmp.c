@@ -26,21 +26,3 @@ int	ft_strncmp(const char *str1, const char *str2, size_t n)
 	}
 	return ((int)((unsigned char)str1[i] - (unsigned char)str2[i]));
 }
-/*
-int	main()
-{
-	char	s1[] = "abcdef";
-	char	s2[] = "abc\375xx";
-	int	cmp = ft_strncmp(s1, s2, 5);
-	
-	if (cmp > 0)
-		{
-			printf("upper s1\n");
-		}
-	else if (cmp == 0)
-		{
-			printf("s1 = s2\n");
-		}
-	else
-		printf("lower s1\n");
-}*/

@@ -38,16 +38,3 @@ int	ft_atoi(const char *str)
 	}
 	return (nbr * sign);
 }
-/*
-int	main()
-{
-	char	chaine[] = "123";
-	char	chain[] = "123";
-	int	dest;
-	int	des;
-	
-	dest = ft_atoi(chaine);
-	printf("%d\n", dest);
-	des = atoi(chain);
-	printf("%d\n", des);
-}*/

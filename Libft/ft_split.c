@@ -56,6 +56,6 @@ char	**ft_split(char const *str, char separator)
 			i += w_len;
 		}
 	}
-	p[j] = '\0';
+	p[j] = (NULL);
 	return (p);
 }

@@ -39,12 +39,3 @@ char	*ft_strjoin(char const *dest, char const *src)
 	p[src_len + dest_len] = '\0';
 	return (p);
 }
-/*
-int	main()
-{
-#include <stdio.h>
-	char	sr1[] = "Hello ";
-	char	sr2[] = "World";
-
-	printf("%s\n", ft_strjoin(sr1,sr2));
-}*/

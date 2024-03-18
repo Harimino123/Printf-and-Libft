@@ -20,8 +20,3 @@ void	ft_putstr_fd(char *str, int fd)
 	while (str && str[i])
 		ft_putchar_fd(str[i++], fd);
 }
-/*
-int	main()
-{
-	ft_putstr_fd("Salut\n",1);
-}*/

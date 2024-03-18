@@ -6,7 +6,7 @@
 #    By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 09:55:22 by hrasolof          #+#    #+#              #
-#    Updated: 2024/03/14 11:32:48 by hrasolof         ###   ########.fr        #
+#    Updated: 2024/03/15 11:31:36 by hrasolof         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,8 @@ SRCS =		ft_isalpha.c \
 		ft_split.c \
 		ft_strmapi.c \
 		ft_lstnew_bonus.c \
-		ft_lstsize_bonus.c  
+		ft_lstsize_bonus.c \
+		ft_lstadd_front_bonus.c  
 
 OBJS = $(SRCS:.c=.o)
 
@@ -62,7 +63,7 @@ bonus: $(OBJS)
 	ar -rc $(NAME) $(OBJS)
 
 %.o: %.c
-		cc $(FLAGS)	 -c $< -o $@
+		cc $(FLAGS) -c $< -o $@
 
 clean:
 		rm -f $(OBJS)

@@ -23,15 +23,3 @@ void	*ft_memset(void *buff, int value, size_t len)
 	}
 	return (buff);
 }
-
-/*int	main(void)
-{
-	char buf[0xff];
-	
-	ft_memset(buf, 0, 0xff);
-	ft_memset(buf, 'Z', 10);
-	ft_memset(buf + 10, 'A', 10);
-	
-	printf("%s\n", buf);
-	return (0);
-}*/

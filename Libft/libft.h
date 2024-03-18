@@ -6,7 +6,7 @@
 /*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 08:28:09 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/14 11:31:11 by hrasolof         ###   ########.fr       */
+/*   Updated: 2024/03/15 16:23:29 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ typedef struct s_list
 }	t_list;
 
 t_list		*ft_lstnew(void *content);
-int			ft_lstsize(t_list *lst);
 size_t		ft_strlcpy(char *dst, const char *src, size_t size);
 size_t		ft_strlen(const char *str);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
+void		ft_lstadd_front(t_list **lst, t_list *news);
 void		ft_striteri(char *str, void (*function)(unsigned int, char*));
 void		*ft_calloc(size_t n_block, size_t size);
 void		*ft_memmove(void *dest, const void *src, size_t n);
@@ -49,6 +49,7 @@ char		*ft_strdup(const char *src);
 char		*ft_strchr(const char *str, int c);
 char		*ft_strrchr(const char *str, int c);
 char		*ft_itoa(int n);
+int			ft_lstsize(t_list *lst);
 int			ft_memcmp(const void *str1, const void *str2, size_t n);
 int			ft_strncmp(const char *str1, const char *str2, size_t n);
 int			ft_atoi(const char *str);

@@ -37,19 +37,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*
-int main() {
-  char str1[] = "Hello,World";
-
-  printf("dest = %s\n", str1);
-  printf("dest after memcpy = %s\n", (char *)ft_memcpy(str1 + 3, str1, 11));
-  
-
-  char src[] = "Hello,World";
-
-  printf("dest = %s\n", src);
-  //printf("dest after memmove = %s\n", (char *)ft_memmove(src + 3, src, 9));
-  printf("dest after memmove = %s\n", (char *)memmove(src + 3, src, 9));
-
-  return 0;
-}*/

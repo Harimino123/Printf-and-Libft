@@ -25,13 +25,3 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	}
 	return (0);
 }
-/*
-int	main()
-{
-	char	str[] = "How many time do you want to learn this?";
-	char	search = 'z';
-
-	printf("%s\n", (char *)ft_memchr(str, search, 100));
-	printf("%s\n", (char *)memchr(str, search, 100));
-
-}*/
