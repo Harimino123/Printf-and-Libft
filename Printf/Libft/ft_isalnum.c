@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 08:33:16 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/21 08:44:31 by hrasolof         ###   ########.fr       */
+/*   Created: 2024/02/21 09:33:31 by hrasolof          #+#    #+#             */
+/*   Updated: 2024/03/12 09:38:37 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# include <stdarg.h>
-# include <stdio.h>
+#include "libft.h"
 
-int	ft_printf(const char *, ...);
-
-#endif
+int	ft_isalnum(int c)
+{
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	else if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
+}

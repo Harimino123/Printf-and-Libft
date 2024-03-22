@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
+/*   By: hrasolof <hrasolof@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 08:33:16 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/21 08:44:31 by hrasolof         ###   ########.fr       */
+/*   Created: 2024/03/10 12:41:00 by hrasolof          #+#    #+#             */
+/*   Updated: 2024/03/11 08:30:06 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# include <stdarg.h>
-# include <stdio.h>
+#include "libft.h"
 
-int	ft_printf(const char *, ...);
-
-#endif
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}

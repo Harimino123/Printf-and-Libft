@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 08:33:16 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/21 08:44:31 by hrasolof         ###   ########.fr       */
+/*   Created: 2024/02/21 10:00:39 by hrasolof          #+#    #+#             */
+/*   Updated: 2024/03/02 14:37:40 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# include <stdarg.h>
-# include <stdio.h>
+#include "libft.h"
 
-int	ft_printf(const char *, ...);
+void	*ft_memset(void *buff, int value, size_t len)
+{
+	unsigned char	*i;
 
-#endif
+	i = buff;
+	while (len--)
+	{
+		*i++ = value;
+	}
+	return (buff);
+}

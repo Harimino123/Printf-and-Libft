@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
+/*   By: hrasolof <hrasolof@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 08:33:16 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/21 08:44:31 by hrasolof         ###   ########.fr       */
+/*   Created: 2024/03/10 13:53:37 by hrasolof          #+#    #+#             */
+/*   Updated: 2024/03/11 08:33:47 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# include <stdarg.h>
-# include <stdio.h>
+#include "libft.h"
 
-int	ft_printf(const char *, ...);
+void	ft_putendl_fd(char *str, int fd)
+{
+	size_t	i;
 
-#endif
+	i = 0;
+	while (str && str[i])
+	{
+		ft_putchar_fd(str[i], fd);
+		i++;
+	}
+	ft_putchar_fd('\n', fd);
+}

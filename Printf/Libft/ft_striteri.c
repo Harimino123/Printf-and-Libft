@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 08:33:16 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/21 08:44:31 by hrasolof         ###   ########.fr       */
+/*   Created: 2024/03/12 12:01:31 by hrasolof          #+#    #+#             */
+/*   Updated: 2024/03/12 12:21:01 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# include <stdarg.h>
-# include <stdio.h>
+#include "libft.h"
 
-int	ft_printf(const char *, ...);
+void	ft_striteri(char *str, void (*function)(unsigned int, char*))
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (str[i])
+	{
+		function(i, &str[i]);
+		i++;
+	}
+}

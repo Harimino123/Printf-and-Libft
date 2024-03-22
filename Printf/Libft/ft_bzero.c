@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 08:33:16 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/21 08:44:31 by hrasolof         ###   ########.fr       */
+/*   Created: 2024/02/22 08:51:53 by hrasolof          #+#    #+#             */
+/*   Updated: 2024/03/07 08:49:22 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# include <stdarg.h>
-# include <stdio.h>
+//#include <stdio.h>
+#include <stdlib.h>
 
-int	ft_printf(const char *, ...);
+void	ft_bzero(void *buff, size_t len)
+{
+	unsigned char	*i;
 
-#endif
+	i = buff;
+	while (len--)
+	{
+		*i++ = 0;
+	}
+}
