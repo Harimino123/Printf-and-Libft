@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
+/*   By: hrasolof <hrasolof@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 09:51:00 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/07 08:50:01 by hrasolof         ###   ########.fr       */
+/*   Created: 2024/03/10 12:46:12 by hrasolof          #+#    #+#             */
+/*   Updated: 2024/03/24 15:14:58 by hari             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	*ft_calloc(size_t n_block, size_t size)
+size_t	ft_putstr_fd(char *str, int fd)
 {
-	char	*cal;
-	size_t	calc;
+	size_t	i;
 
-	calc = n_block * size;
-	cal = malloc(calc);
-	if (!cal)
-		return (0);
-	ft_bzero(cal, calc);
-	return (cal);
+	i = 0;
+	while (str && str[i])
+		ft_putchar_fd(str[i++], fd);
+	return (i);
 }

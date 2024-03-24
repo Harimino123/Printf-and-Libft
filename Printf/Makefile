@@ -3,38 +3,34 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+         #
+#    By: hari <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/21 08:41:10 by hrasolof          #+#    #+#              #
-#    Updated: 2024/03/22 09:29:13 by hrasolof         ###   ########.fr        #
+#    Created: 2024/03/24 13:53:04 by hari              #+#    #+#              #
+#    Updated: 2024/03/24 14:11:30 by hari             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = printf.a
+NAME = ft_printf.a
 
-SRCS =	ft_printf.c  
+SRCS =	ft_printf.c /
+	ft_putchar_fd.c 
 
 OBJS = $(SRCS:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
 
-all: libft $(NAME)
+all: $(NAME)
 
-libft:
-	@make -C Libft
-
-$(NAME): libft $(OBJS)
+$(NAME): $(OBJS)
 	ar -rc $(NAME) $(OBJS)
 
 %.o: %.c
-		cc $(FLAGS) -c $< -o $@
+	cc $(FLAGS) -c $< -o $@
 
 clean:
-		rm -f $(OBJS)
-
+	rm -f $(OBJS)
 fclean: clean
-		@make -C Libft fclean
-		rm -f $(NAME)
+	rm -f $(NAME)
 re: fclean all
 
-.PHONY : all clean fclean re libft
+.PHONY : all clean fclean all

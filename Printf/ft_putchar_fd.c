@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
+/*   By: hrasolof <hrasolof@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 09:53:24 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/02/27 10:38:23 by hrasolof         ###   ########.fr       */
+/*   Created: 2024/03/10 12:41:00 by hrasolof          #+#    #+#             */
+/*   Updated: 2024/03/24 14:31:21 by hari             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_putchar_fd(char c, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	write(fd, &c, 1);
+	return (1);
 }
