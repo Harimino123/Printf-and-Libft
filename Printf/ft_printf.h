@@ -6,7 +6,7 @@
 /*   By: hari <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 14:04:45 by hari              #+#    #+#             */
-/*   Updated: 2024/03/24 16:39:43 by hari             ###   ########.fr       */
+/*   Updated: 2024/03/26 14:01:34 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,14 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stddef.h>
+# include <stdlib.h>
 
 int	ft_printf(const char *format, ...);
-size_t	ft_putchar_fd(char c, int fd);
-size_t	ft_putstr_fd(char *str, int fd);
-void	ft_putnbr_fd(int n, int fd);
+size_t	ft_putchar(char c);
+size_t	ft_putstr(char *str);
+size_t  print_int(int n);
+size_t	ft_strlen(const char *str);
+char	*ft_itoa(int n);
+char	*ft_strdup(const char *src);
 
 #endif

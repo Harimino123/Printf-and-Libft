@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrasolof <hrasolof@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/10 12:38:41 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/24 18:35:04 by hari             ###   ########.fr       */
+/*   Created: 2024/03/10 12:46:12 by hrasolof          #+#    #+#             */
+/*   Updated: 2024/03/24 15:14:58 by hari             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "ft_printf.h"
 
-size_t	ft_putnbr_fd(int n, int fd)
+size_t	ft_putstr(char *str)
 {
-	if (n == -2147483648)
+	size_t	i;
+
+	i = 0;
+	if(!str)
 	{
-		write(fd, &"-", 1);
-		ft_putchar_fd('2', fd);
-		ft_putnbr_fd(147483648, fd);
+		write(1, "(null)", 6);
+		return (6);
 	}
-	else if (n < 0)
-	{
-		write(fd, &"-", 1);
-		n = -n;
-		ft_putnbr_fd(n, fd);
-	}
-	else if (n > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}
-	else
-		ft_putchar_fd(n + '0', fd);
-	return (nb_char_printed);
+	while(str && str[i])
+		ft_putchar(str[i++]);
+	return (i);
 }
