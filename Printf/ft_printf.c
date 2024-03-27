@@ -6,7 +6,7 @@
 /*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 13:52:47 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/26 14:19:21 by hrasolof         ###   ########.fr       */
+/*   Updated: 2024/03/27 13:46:52 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,33 +32,34 @@ int	ft_printf(const char *format, ...)
 	i = 0;
 	va_start(args, format);
 	if (!format)
-		return (0);
+		return (-1);
 	while (format[i])
 	{
-		if (format[i] != '%' || format[i + 1] == '\0')
-		{
-			ft_putchar(format[i]);
-			printed_char++;
-		}
-		else
+		if (format[i] == '%')
 		{
 			format_spec(format[i + 1], args, &printed_char);
 			i++;
+		}
+		else
+		{
+			ft_putchar(format[i]);
+			printed_char++;
 		}
 	i++;
 	}
 	va_end(args);
 	return ((int)printed_char);
 }
-/*
+
 #include <stdio.h>
 
 int	main()
-{
-	ft_printf("Bonjour, %c !\n", 'W');
-	printf("Bonjour, %c !\n", 'W');
-	ft_printf("Bonjour, l'%s !\n", "ami");
-	printf("Bonjour, l'%s !\n", "ami"); 
-	ft_printf("Nombre = %i !\n", -123456);
-	printf("Nombre = %i !\n", -123456);	
-}*/
+{ 
+	int	re;
+	int i;
+	re = ft_printf("Nombre = %d !\n", 0);
+	i = printf("Nombre = %d !\n", 0);
+	printf("%d\n", i);	
+	printf("%d\n", re);
+
+}

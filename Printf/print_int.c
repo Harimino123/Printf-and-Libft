@@ -17,6 +17,7 @@ size_t	print_int(int n)
 	char	*num_str;
 	size_t	len;
 
+	len = 0;
 	num_str = ft_itoa(n);
 	if (!num_str)
 		return 0;
