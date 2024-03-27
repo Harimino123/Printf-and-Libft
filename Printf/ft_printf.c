@@ -35,7 +35,7 @@ int	ft_printf(const char *format, ...)
 		return (0);
 	while (format[i])
 	{
-		if (format[i] != '%')
+		if (format[i] != '%' || format[i + 1] == '\0')
 		{
 			ft_putchar(format[i]);
 			printed_char++;
