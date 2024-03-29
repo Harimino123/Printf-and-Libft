@@ -18,11 +18,9 @@
 # include <stdlib.h>
 
 int	ft_printf(const char *format, ...);
-size_t	ft_putchar(char c);
+int	ft_putchar(char c);
 size_t	ft_putstr(char *str);
-size_t  print_int(int n);
 size_t	ft_strlen(const char *str);
-char	*ft_itoa(int n);
-char	*ft_strdup(const char *src);
+int	ft_putnbr(int n);
 
 #endif

@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_int.c                                        :+:      :+:    :+:   */
+/*   ft_longueur.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
+/*   By: hrasolof <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/26 14:12:59 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/26 14:17:17 by hrasolof         ###   ########.fr       */
+/*   Created: 2024/03/29 11:35:21 by hrasolof          #+#    #+#             */
+/*   Updated: 2024/03/29 11:35:44 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	print_int(int n)
+int ft_long(int p)
 {
-	char	*num_str;
-	size_t	len;
-
-	len = 0;
-	num_str = ft_itoa(n);
-	if (!num_str)
-		return 0;
-	len = ft_putstr(num_str);
-	free(num_str);
-	return len;
+	char	*o;
+	int	i;
+	int	j;
+	
+	j = 0;
+	o = ft_itoa(p);
+	while (o[j] != '\0')
+	{
+		write (1 ,&o[j],1);
+		j++;
+	}
+	i = ft_strlen(o);
+	free(o);
+	return (i);
 }
