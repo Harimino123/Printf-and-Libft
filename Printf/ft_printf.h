@@ -22,5 +22,7 @@ int	ft_putchar(char c);
 size_t	ft_putstr(char *str);
 size_t	ft_strlen(const char *str);
 int	ft_putnbr(int n);
+int	ft_putnbr_u(unsigned int n);
+int	ft_dec_to_hex(unsigned int nombre, int majuscule);
 
 #endif

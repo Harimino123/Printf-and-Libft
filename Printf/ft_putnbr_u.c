@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_u.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
+/*   By: hrasolof <hrasolof@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 10:19:57 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/27 13:46:17 by hrasolof         ###   ########.fr       */
+/*   Created: 2024/03/10 12:38:41 by hrasolof          #+#    #+#             */
+/*   Updated: 2024/03/12 11:54:31 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ static int	ft_longueur(int n)
 	int	ln;
 
 	ln = 1;
-	if (n < 0)
-		ln++;
 	while (n / 10 != 0)
 	{
 		n /= 10;
@@ -27,30 +25,17 @@ static int	ft_longueur(int n)
 	return (ln);
 }
 
-char	*ft_itoa(int n)
+int	ft_putnbr_u(unsigned int n)
 {
-	char	*p;
-	int		len;
-	int		i;
-
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	len = ft_longueur(n);
-	p = (char *)malloc(sizeof(char) * (len + 1));
-	if (!p)
-		return (NULL);
-	p[len] = '\0';
-	i = len - 1;
-	if (n < 0)
+	int	len;
+	
+	if (n > 9)
 	{
-		p[0] = '-';
-		n *= -1;
+		len = ft_putnbr_u(n / 10);
+		ft_putnbr_u(n % 10);	
+		return (len + 1);
 	}
-	while (i >= 0 && p[i] != '-')
-	{
-		p[i] = n % 10 + '0';
-		n /= 10;
-		i--;
-	}
-	return (p);
+	else
+		ft_putchar(n + '0');
+	return (ft_longueur(n));
 }
