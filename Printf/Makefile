@@ -18,7 +18,9 @@ SRCS =	ft_printf.c \
 	ft_strlen.c \
 	ft_putnbr.c \
 	ft_putnbr_u.c \
-	ft_dec_to_hex.c
+	ft_dec_to_hex.c \
+	dec_to_hex.c \
+	adr_to_str.c
 
 OBJS = $(SRCS:.c=.o)
 

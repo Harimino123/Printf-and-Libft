@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrasolof <hrasolof@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 12:46:12 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/24 15:14:58 by hari             ###   ########.fr       */
+/*   Updated: 2024/04/08 17:34:28 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ size_t	ft_putstr(char *str)
 	size_t	i;
 
 	i = 0;
-	if(!str)
+	if (!str)
 	{
 		write(1, "(null)", 6);
 		return (6);
 	}
-	while(str && str[i])
+	while (str && str[i])
 		ft_putchar(str[i++]);
 	return (i);
 }

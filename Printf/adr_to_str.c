@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dec_to_hex.c                                    :+:      :+:    :+:   */
+/*   adr_to_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 13:01:40 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/04/08 17:33:25 by hrasolof         ###   ########.fr       */
+/*   Created: 2024/04/08 16:30:24 by hrasolof          #+#    #+#             */
+/*   Updated: 2024/04/08 17:39:35 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_dec_to_hex(unsigned int nombre, int majuscule)
+int	adr_to_str(unsigned long long int address, char *str)
 {
-	int		reste;
-	int		i;
 	char	hexa[100];
 	int		printed_char;
+	int		k;
+	int		j;
 
-	i = 0;
 	printed_char = 0;
-	if (nombre == 0)
-		return (ft_putchar('0'));
-	while (nombre != 0)
+	if (address == 0)
 	{
-		reste = nombre % 16;
-		if (reste < 10)
-			hexa[i++] = 48 + reste;
-		else if (majuscule)
-			hexa[i++] = 55 + reste;
-		else
-			hexa[i++] = 87 + reste;
-		nombre /= 16;
+		str = "(nil)";
+		ft_putstr(str);
+		return (5);
 	}
-	printed_char = i--;
-	while (i >= 0)
-		ft_putchar(hexa[i--]);
-	return (printed_char);
+	k = 0;
+	write(1, "0x", 2);
+	printed_char = dec_to_hex(address, hexa);
+	j = printed_char - 1;
+	while (j >= 0)
+		str[k++] = hexa[j--];
+	str[k] = '\0';
+	ft_putstr(str);
+	return (printed_char + 2);
 }

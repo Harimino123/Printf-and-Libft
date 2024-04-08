@@ -6,7 +6,7 @@
 /*   By: hrasolof <hrasolof@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 13:52:47 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/03/27 15:07:52 by hrasolof         ###   ########.fr       */
+/*   Updated: 2024/04/08 17:43:25 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	format_spec(char c, va_list args, size_t *printed_char)
 {
-	int	majuscule;
-	
+	int		majuscule;
+	char	addr[20];
+
 	if (c == 'c')
 		*printed_char += ft_putchar(va_arg(args, int));
 	else if (c == 's')
@@ -29,6 +30,10 @@ void	format_spec(char c, va_list args, size_t *printed_char)
 		majuscule = (c == 'X');
 		*printed_char += ft_dec_to_hex(va_arg(args, unsigned int), majuscule);
 	}
+	else if (c == 'p')
+		*printed_char += adr_to_str(va_arg(args, unsigned long int), addr);
+	else if (c == '%')
+		*printed_char += ft_putchar('%');
 }
 
 int	ft_printf(const char *format, ...)
@@ -54,19 +59,8 @@ int	ft_printf(const char *format, ...)
 			ft_putchar(format[i]);
 			printed_char++;
 		}
-	i++;
+		i++;
 	}
 	va_end(args);
 	return ((int)printed_char);
 }
-/*
-#include <stdio.h>
-#include <limits.h>
-
-int	main()
-{
-	int re = ft_printf("%x\n", 1000);
-	int ry = printf("%x\n", 1000);
-	
-	printf("re = %d and ry = %d", re, ry);
-}*/
