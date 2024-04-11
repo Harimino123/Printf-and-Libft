@@ -21,11 +21,7 @@ int	adr_to_str(unsigned long long int address, char *str)
 
 	printed_char = 0;
 	if (address == 0)
-	{
-		str = "(nil)";
-		ft_putstr(str);
-		return (5);
-	}
+		return (ft_putstr("(nil)"));
 	k = 0;
 	write(1, "0x", 2);
 	printed_char = dec_to_hex(address, hexa);
